@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:shiro="http://www.thymeleaf.org/thymeleaf-extras-shiro">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>这是首页</p>
+<div shiro:hasPermission="yh:add">
+    <a th:href="@{/rest/edu/add}">add</a>
+</div>
+
+<div shiro:hasPermission="yh:update">
+    <a th:href="@{/rest/edu/update}">update</a>
+</div>
+</body>
+</html>

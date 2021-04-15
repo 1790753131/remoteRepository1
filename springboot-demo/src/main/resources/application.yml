@@ -1,0 +1,60 @@
+########mysql配置#############
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/crm?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+
+
+
+# ######mybatis配置##########
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.edu.learn.dao.model
+
+
+
+  #####themleft配置#####
+  spring:
+    thymeleaf:
+      #模板的模式，支持 HTML, XML TEXT JAVASCRIPT
+      mode: HTML5
+      #编码 可不用配置
+      encoding: UTF-8
+      #内容类别,可不用配置
+      content-type: text/html
+      #开发配置为false,避免修改模板还要重启服务器
+      cache: false
+      #配置模板路径，默认是templates，可以不用配置
+      prefix: classpath:/templates
+
+
+
+###########################自定义属性#############################3
+config-attributes:
+  value: 345                          #对应单个值
+  valueArray: [1,2,3,4,5,6,7,8,9 ]    #对应数组
+  valueList:                         #对应list
+    -13579
+    -246810
+  valueMap:                          #对应map
+    name: 张三
+    age: 20
+    sex: female
+  valueMapList:                      #对应list<map>
+    - name: 王五
+      age: 21
+    - name: 赵六
+      age: 31
+
+###########################自定义七牛云配置#############################
+qiniu:
+  # AK
+  qiniu-accesskey: 123456
+  # SK
+  qiniu-secretkey: 6666666
+
+  qiniu-bucket-name: wxydemo
+
+  qiniu-url: www.qiniu.com

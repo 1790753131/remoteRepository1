@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.edu.learn.dao.mapper.IndexDao">
+
+    <select id="getModel" resultType="com.edu.learn.dao.model.YhbModel">
+        select * from yhb where name=#{name}
+    </select>
+
+    <insert id="inserYh" parameterType="com.edu.learn.dao.model.YhbModel">
+        insert into yhb(name,pwt,perms)values(#{name},#{pwt},#{perms})
+    </insert>
+</mapper>
